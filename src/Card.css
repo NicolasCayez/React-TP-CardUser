@@ -1,7 +1,8 @@
 .card {
-  border: solid 2px white;
-  border-radius: 15px;
+  /* border: solid 2px white; */
+  /* border-radius: 15px; */
   background-color: rgb(46, 46, 46);
+  color: rgb(46, 46, 46);
 }
 
 .blue {
@@ -12,4 +13,25 @@
 }
 .yellow {
   background-color: lemonchiffon;
+}
+
+.border{
+  border: solid 3px red;
+}
+
+
+.likeRow {
+  display: flex;
+}
+
+.likeCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: grey;
+}
+
+.like {
+  background-color: red;
+
 }

@@ -7,10 +7,19 @@ import Card from './Card'
 //? Partie 2
 const USER_JP = {image:"https://picsum.photos/id/2/200", pseudo:"Jean-Pierre", email:"jp@monfai.fr", description:"Lorem ipsum dolor sit amet. Denetur nesciunt nulla nostrum non omnis sed nam aperiam!", sexe:"homme"}
 const USER_BOB = {image:"https://picsum.photos/id/3/200", pseudo:"Bob", email:"bob@monfai.fr", description:"Lorem ipsum dolor sit amet. Reprehenderit, tenetur nesciunt nulla nostrum non omnis sed nam aperiam!", sexe:"non-binaire"}
-const USER_JANE = {image:"https://picsum.photos/id/4/200", pseudo:"Jack", email:"jack@monfai.fr", description:"Lorem ipsum dolor omnis sed nam aperiam!", sexe:"femme"}
+const USER_JANE = {image:"https://picsum.photos/id/4/200", pseudo:"Jane", email:"jane@monfai.fr", description:"Lorem ipsum dolor omnis sed nam aperiam!", sexe:"femme"}
 const USERS = [USER_JP, USER_BOB, USER_JANE]
  console.log(USERS)
 export default function App() {
+  //TP2 Partie 3
+  const [search, setSearch] = useState('')
+  const USERS_LIST = USERS.filter(element => {
+    if (!element.pseudo.includes(search)) {
+      return false
+    }else{
+      return true
+    }
+  })
   
   //? Partie 1
   // return (
@@ -44,8 +53,10 @@ export default function App() {
   //? Partie 4
   return (
     <>
+      <input type="text" name="" id="" onChange={(event)=>setSearch(event.target.value)} />
       {USERS.length>0 ? <h1>Liste des utilisateurs</h1> : <h1>Aucun utilisateur d’inscrit</h1>}
-      {USERS.map((oneUser, index) =>
+      {/* {USERS.map((oneUser, index) => */}
+      {USERS_LIST.map((oneUser, index) =>
           <Card key={index} image={oneUser.image} pseudo={oneUser.pseudo} email= {oneUser.email} description={oneUser.description} sexe={oneUser.sexe}/>
         )
       }
